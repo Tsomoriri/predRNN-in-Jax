@@ -4,6 +4,13 @@
 
 Jax has features such as autoparallelism and just in time compilation of graphs.The goal for this project is to understand deep learning framework jax by porting the official implementation written in Pytorch and utilise the native Jax features. The neural network library equinox and optimisers from optax are used in this project.
 
+## Usage
+The train.py is hard coded to handle a radar movie of format [:,:,:,:,].npy.
+```bash
+python -u train.py --model_name predrnn --num_hidden 16,16,16,16,16 --num_layers 5 --patch_size 4 --img_channel 1 --img_width 40 --total_length 5 --input_length 4 --lr 0.001 --batch_size 16 --reverse_scheduled_sampling 0 --decouple_beta 0.1 --save_dir checkpoints --visual 1
+
+```
+
 ## A table mapping Pytorch functions to Jax 
 
 | PyTorch Function                    | JAX Function                                     |
